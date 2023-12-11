@@ -1,16 +1,13 @@
 const ApolloServer = require("apollo-server");
 const { logger } = require("../utils/logger");
-const userTypeDefs = require("../graphql/schemas/userSchema");
-const postTypeDefs = require("../graphql/schemas/postSchema");
+const typeDefs = require("../graphql/schema");
 
-const userResolvers = require("../graphql/resolvers/userResolvers");
-const postResolvers = require("../graphql/resolvers/postResolvers");
+const resolvers = require("../graphql/resolver");
+
 
 const server = new ApolloServer({
-  userTypeDefs,
-  postTypeDefs,
-  userResolvers,
-  postResolvers,
+  typeDefs,
+  resolvers
 });
 const port = 5000;
 
