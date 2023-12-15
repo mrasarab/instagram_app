@@ -3,6 +3,7 @@ const Post = require("../models/Post");
 const Like = require("../models/Like");
 const Comment = require("../models/Comment");
 const bcrypt = require("bcrypt");
+const { logger } = require("../utils/logger");
 
 const hashPassword = async (password) => {
   return await bcrypt.hash(password, 10);
